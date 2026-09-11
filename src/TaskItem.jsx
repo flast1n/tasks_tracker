@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { LanguageContext } from "./LanguageContext";
 
 export const TaskItem = ({ task, onDelete, onToggle, onUpdate }) => {

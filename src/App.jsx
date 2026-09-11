@@ -1,14 +1,17 @@
 import { useState, useContext } from "react";
 import { AddTaskForm } from "./AddTaskForm";
 import { TaskList } from "./TaskList";
-import { UseLocalStorage } from "./UseLocalStorage";
+import { useLocalStorage } from "./UseLocalStorage";
 import { LanguageContext } from "./LanguageContext";
 import { ThemeContext } from "./ThemeContext";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageToggle } from "./LanguageToggle";
 
 export const App = () => {
-  const [tasks, setTasks] = UseLocalStorage("my_tasks", initialTasks);
+  const [tasks, setTasks] = useLocalStorage("smart_tasks", [
+    { id: 1, title: "Вивчити React Context", priority: "high", category: "Study", isCompleted: false },
+    { id: 2, title: "Вивчити Git", priority: "medium", category: "Study", isCompleted: false }
+  ]);
   const {theme} = useContext(ThemeContext);
   const {t} = useContext(LanguageContext);
 

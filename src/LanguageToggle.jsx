@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
+import { LanguageContext } from "./LanguageContext";
+
 
 export const LanguageToggle = () => {
-    const {lang, toggleLang} = useContext(ThemeContext);
+    const {lang, toggleLang} = useContext(LanguageContext);
 
     return (<div>
         <button className="btn" onClick={toggleLang}>{lang === "uk" ? "🇺🇦" : "🇬🇧"}</button>
