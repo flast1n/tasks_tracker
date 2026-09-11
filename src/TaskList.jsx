@@ -1,8 +1,10 @@
 import { TaskItem } from "./TaskItem";
+import { LanguageContext } from "./LanguageContext";
 
 export const TaskList = ({ tasks, onDelete, onToggle, onUpdate }) => {
+  const {t} = useContext(LanguageContext);
   if (tasks.length === 0) {
-    return <p>Список завдань порожній</p>;
+    return <p>{t.noTasks}</p>;
   }
 
   return (

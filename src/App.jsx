@@ -1,24 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { AddTaskForm } from "./AddTaskForm";
 import { TaskList } from "./TaskList";
+import { UseLocalStorage } from "./UseLocalStorage";
+import { LanguageContext } from "./LanguageContext";
+import { ThemeContext } from "./ThemeContext";
+import { ThemeToggle } from "./ThemeToggle";
+import { LanguageToggle } from "./LanguageToggle";
 
 export const App = () => {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Вивчити React Context",
-      priority: "high", 
-      category: "Study", 
-      isCompleted: false
-    },
-    {
-      id: 2,
-      title: "Вивчити Git",
-      priority: "medium", 
-      category: "Study", 
-      isCompleted: false
-    }
-  ]);
+  const [tasks, setTasks] = UseLocalStorage("my_tasks", initialTasks);
+  const {theme} = useContext(ThemeContext);
+  const {t} = useContext(LanguageContext);
 
   const handleAddTask = (newTask) => {
     setTasks([...tasks, { id: Date.now(), ...newTask }]);
@@ -44,10 +36,14 @@ export const App = () => {
   };
 
   return (
-    <div className="app">
+    <div className={`app ${theme}`}>
+      <header className="header">
+        <LanguageToggle />
+        <ThemeToggle />
+      </header>
       <main className="main-layout">
         <div>
-          <p style={{ marginBottom: "1rem" }}>Всього завдань: {tasks.length}</p>
+          <p style={{ marginBottom: "1rem" }}>{t.totalTasks} {tasks.length}</p>
           <TaskList 
             tasks={tasks} 
             onDelete={handleDeleteTask} 

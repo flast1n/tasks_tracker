@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { LanguageContext } from "./LanguageContext";
 
 export const TaskItem = ({ task, onDelete, onToggle, onUpdate }) => {
   const [isEditing, setEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(task.title);
   const [editPriority, setEditPriority] = useState(task.priority);
   const [editCategory, setEditCategory] = useState(task.category);
+  const {t} = useContext(LanguageContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,17 +39,17 @@ export const TaskItem = ({ task, onDelete, onToggle, onUpdate }) => {
           <input type="text" value={editTitle} onChange={(e) => setEditTitle(e.target.value)}
           />
           <select value={editPriority} onChange={(e) => setEditPriority(e.target.value)}>
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
+            <option value="low">{t.easyDifficulty}</option>
+            <option value="medium">{t.mediumDifficulty}</option>
+            <option value="high">{t.hardDifficulty}</option>
           </select>
           <select value={editCategory} onChange={(e) => setEditCategory(e.target.value)}>
-            <option value="Work">Work</option>
-            <option value="Personal">Personal</option>
-            <option value="Study">Study</option>
+            <option value="Work">{t.workCategory}</option>
+            <option value="Personal">{t.personalCategory}</option>
+            <option value="Study">{t.studyCategory}</option>
           </select>
-          <button className="btn btn-primary" type="submit">Зберегти</button>
-          <button className="btn btn-outline" type="button" onClick={() => setEditing(false)}>Скасувати</button>
+          <button className="btn btn-primary" type="submit">{t.saveButton}</button>
+          <button className="btn btn-outline" type="button" onClick={() => setEditing(false)}>{t.cancelButton}</button>
         </form>
       )}
     </div>

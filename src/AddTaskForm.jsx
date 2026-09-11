@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { LanguageContext } from "./LanguageContext";
 
 export const AddTaskForm = ({ onAdd }) => {
   const [title, setTitle] = useState("");
   const [priority, setPriority] = useState("medium");
   const [category, setCategory] = useState("Work");
+  const {t} = useContext(LanguageContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,20 +23,20 @@ export const AddTaskForm = ({ onAdd }) => {
   return (
     <form className="card" onSubmit={handleSubmit}>
       <div className="form-group">
-        <input type="text" placeholder="Назва завдання..." value={title} onChange={(e) => setTitle(e.target.value)}
+        <input type="text" placeholder={t.taskInput} value={title} onChange={(e) => setTitle(e.target.value)}
         />
         <select value={priority} onChange={(e) => setPriority(e.target.value)}>
-          <option value="low">Низький пріоритет</option>
-          <option value="medium">Середній пріоритет</option>
-          <option value="high">Високий пріоритет</option>
+          <option value="low">{t.lowPriority}</option>
+          <option value="medium">{t.mediumPriority}</option>
+          <option value="high">{t.highPriority}</option>
         </select>
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="Work">Робота</option>
-          <option value="Personal">Особисте</option>
-          <option value="Study">Навчання</option>
+          <option value="Work">{t.workCategory}</option>
+          <option value="Personal">{t.personalCategory}</option>
+          <option value="Study">{t.studyCategory}</option>
         </select>
       </div>
-      <button type="submit" className="btn btn-primary">Додати завдання</button>
+      <button type="submit" className="btn btn-primary">{t.addButton}</button>
     </form>
   );
 };
