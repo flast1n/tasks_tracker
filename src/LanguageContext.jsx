@@ -26,7 +26,16 @@ export const LanguageProvider = ({ children }) => {
       noTasks: "Список завдань порожній",
       easyDifficulty: "Низький",
       mediumDifficulty: "Середній",
-      hardDifficulty: "Високий"
+      hardDifficulty: "Високий",
+      searchPlaceholder: "Пошук завдань...",
+      filterAll: "Усі",
+      filterActive: "Активні",
+      filterCompleted: "Виконані",
+      filterHigh: "🔥 Важливі",
+      sortDefault: "За датою",
+      sortAlphabet: "За алфавітом",
+      sortPriority: "За пріоритетом",
+      progressText: "Прогрес виконання:"
     },
     en: {
       totalTasks: "Total tasks:",
@@ -43,7 +52,16 @@ export const LanguageProvider = ({ children }) => {
       noTasks: "Task list is empty",
       easyDifficulty: "Low",
       mediumDifficulty: "Medium",
-      hardDifficulty: "High"
+      hardDifficulty: "High",
+      searchPlaceholder: "Search tasks...",
+      filterAll: "All",
+      filterActive: "Active",
+      filterCompleted: "Completed",
+      filterHigh: "🔥 High Priority",
+      sortDefault: "By date",
+      sortAlphabet: "Alphabetical",
+      sortPriority: "By priority",
+      progressText: "Completion progress:"
     }
   };
 

@@ -229,3 +229,7 @@ textarea:focus {
   gap: 0.8rem;
   width: 100%;
 }
+
+.color {
+  color: #334155;
+}
