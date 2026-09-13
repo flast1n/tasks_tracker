@@ -35,7 +35,8 @@ export const LanguageProvider = ({ children }) => {
       sortDefault: "За датою",
       sortAlphabet: "За алфавітом",
       sortPriority: "За пріоритетом",
-      progressText: "Прогрес виконання:"
+      progressText: "Прогрес виконання:",
+      tasksReady: "Всі завдання виконані!"
     },
     en: {
       totalTasks: "Total tasks:",
@@ -61,7 +62,8 @@ export const LanguageProvider = ({ children }) => {
       sortDefault: "By date",
       sortAlphabet: "Alphabetical",
       sortPriority: "By priority",
-      progressText: "Completion progress:"
+      progressText: "Completion progress:",
+      tasksReady: "All tasks are completed!"
     }
   };
 
