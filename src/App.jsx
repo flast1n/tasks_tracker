@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { AddTaskForm } from "./AddTaskForm";
 import { TaskList } from "./TaskList";
-import { useLocalStorage } from "./useLocalStorage";
+import { useLocalStorage } from "./UseLocalStorage";
 import { LanguageContext } from "./LanguageContext";
 import { ThemeContext } from "./ThemeContext";
 import { ThemeToggle } from "./ThemeToggle";
