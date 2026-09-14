@@ -13,7 +13,7 @@ export const TaskStats = ({ tasks }) => {
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.9rem", marginBottom: "0.4rem" }}>
         <span className="color">{t.progressText}</span>
         <strong className="color">{percentage}%</strong>
-        <span className="color">{t.totalTasks} {total}</span>
+        <span className="color">{completed}/{total}</span>
         <span className="color">{percentage === 100 ? t.tasksReady : null}</span>
       </div>
       <div className="progress-bar-container" style={{ background: "var(--border-color)", borderRadius: "8px", height: "10px", overflow: "hidden" }}>
