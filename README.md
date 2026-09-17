@@ -15,3 +15,8 @@
 * **React** (Functional Components, Hooks: `useState`, `useEffect`)
 * **CSS3** / **Tailwind CSS** (стилізація)
 * **JavaScript (ES6+)**
+
+## Запуск
+
+* Запускаємо проект в консолі через npm run dev
+* Копіюємо та вставляємо у браузер отримане посилання
